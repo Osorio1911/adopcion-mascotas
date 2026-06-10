@@ -1,0 +1,80 @@
+.detalle-container {
+  background: #fffaf6;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+ion-toolbar {
+    --background: #fffaf6;
+}
+
+
+
+.btncatal {
+    background: #ff7f11;
+    color: aliceblue;
+    border-radius: 20px;
+}
+
+.mascota-img {
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  object-position: center;
+
+    background: #fffaf6;
+    
+}
+
+.info-card {
+  margin: -30px 20px 20px;
+  background: white;
+  border-radius: 30px;
+  padding: 25px;
+
+  box-shadow: 0 10px 25px rgba(255, 127, 17, 0.15);
+}
+
+.info-card h1 {
+  color: #ff7f11;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+
+  background: linear-gradient(135deg, #ff9f43 0%, #ff7f11 100%);
+
+  color: white;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  margin-bottom: 20px;
+}
+
+.datos {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.dato {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.info-card h3 {
+  color: #ff7f11;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.whatsapp-btn {
+  --background: #25d366;
+  --box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}

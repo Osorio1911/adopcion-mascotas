@@ -1,0 +1,140 @@
+.detalle-container {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    background: #fffaf6;
+
+    min-height: 100vh;
+
+    text-align: center;
+}
+.imagen-card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+      0 10px 25px rgba(255,127,17,.12);
+}
+
+.foto-mascota {
+    width: 100%;
+    max-width: 320px;
+    height: 280px;
+
+    object-fit: contain;
+
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    color: #ff7f11;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.estado {
+    display: inline-block;
+
+    background: #fff0e1;
+
+    color: #ff7f11;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+      0 10px 25px rgba(255,127,17,.12);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: #ff7f11;
+    font-weight: 700;
+}
+
+.descripcion-card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 20px;
+
+    text-align: left;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+      0 10px 25px rgba(255,127,17,.12);
+}
+
+.descripcion-card h3 {
+    color: #ff7f11;
+    margin-bottom: 10px;
+}
+
+.descripcion-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.whatsapp-btn {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: 700;
+
+    background: linear-gradient(
+      135deg,
+      #ff9f43 0%,
+      #ff7f11 100%
+    );
+
+    box-shadow:
+      0 8px 20px rgba(255,127,17,.25);
+}

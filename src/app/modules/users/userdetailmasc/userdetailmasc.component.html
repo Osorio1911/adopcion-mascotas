@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón izquierda -->
+    <ion-buttons slot="start">
+      <ion-button (click)="volverCatalogo()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- Título -->
+    <ion-title>Detalle Mascota</ion-title>
+
+    <!-- Botón derecha -->
+    <ion-buttons  slot="end">
+      <ion-button class="btncatal" (click)="irCatalogo()">
+        Catálogo
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="detalle-container">
+
+    <img
+      class="mascota-img"
+      [src]="mascota.imagen"
+      [alt]="mascota.nombre">
+
+    <div class="info-card">
+
+      <h1>{{ mascota.nombre }}</h1>
+
+      <span class="badge">
+        {{ mascota.tipo }}
+      </span>
+
+      <div class="datos">
+
+        <div class="dato">
+          <strong>Edad:</strong>
+          2 años
+        </div>
+
+        <div class="dato">
+          <strong>Raza:</strong>
+          Labrador
+        </div>
+
+        <div class="dato">
+          <strong>Estado:</strong>
+          Disponible
+        </div>
+
+      </div>
+
+      <h3>Descripción</h3>
+
+      <p>
+        Mascota amigable, juguetona y lista para encontrar
+        un hogar lleno de amor.
+      </p>
+
+    </div>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button
+      class="whatsapp-btn"
+      (click)="contactarWhatsapp()">
+
+      <ion-icon name="logo-whatsapp"></ion-icon>
+
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

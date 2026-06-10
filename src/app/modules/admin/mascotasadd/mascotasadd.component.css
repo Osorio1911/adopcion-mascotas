@@ -1,0 +1,180 @@
+.catalog-container {
+    padding: 20px;
+    background: #fffaf6;
+    min-height: 100vh;
+}
+
+/* TITULO */
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.title-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* FILTROS */
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+.filters ion-button {
+  --background: white;
+  --color: #ff7f11;
+  --border-color: #ff7f11;
+}
+
+.filters ion-button.activo {
+  --background: #ff7f11;
+  --color: white;
+  --border-color: #ff7f11;
+}
+.filters ion-button.activo {
+  --background: linear-gradient(135deg, #ff9f43 0%, #ff7f11 100%);
+  --color: white;
+  --border-radius: 20px;
+}
+
+.active-btn {
+    --background: linear-gradient(135deg, #ff9f43 0%, #ff7f11 100%);
+    --border-radius: 20px;
+}
+
+/* GRID */
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+
+.pet-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(255,127,17,0.12);
+
+    transition: 0.3s;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.pet-image {
+    height: 180px;
+}
+
+.pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-card h3 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* HUELLA */
+
+.paw-icon {
+    display: block;
+    margin: auto;
+    font-size: 28px;
+    color: #ff7f11;
+    padding-bottom: 15px;
+}
+
+/* MENSAJE */
+
+.info-box {
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #fff1e7;
+
+    border-radius: 20px;
+
+    color: #444;
+
+    box-shadow:
+        0 6px 15px rgba(255,127,17,0.10);
+}
+
+.info-box ion-icon {
+    font-size: 34px;
+    color: #ff7f11;
+}
+/* PERFIL */
+
+.perfil-btn {
+    --background: linear-gradient(
+        135deg,
+        #ff9f43 0%,
+        #ff7f11 100%
+    );
+
+    --color: white;
+
+    width: 42px;
+    height: 42px;
+
+   
+
+    margin-right: 10px;
+
+    box-shadow:
+        0 4px 12px rgba(255, 127, 17, .25);
+}
+
+.perfil-btn ion-icon {
+    font-size: 22px;
+}
+
+/*header*/
+
+/* HEADER */
+
+.custom-toolbar {
+  --background: #fffaf6;
+  --border-color: transparent;
+
+  box-shadow: 0 2px 10px rgba(255, 127, 17, 0.08);
+}
+
+
+
+/* FLECHA */
+
+ion-buttons ion-icon {
+  font-size: 24px;
+}
+
+
+
+/* HOVER PC */
+
+.perfil-btn:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="volverCatalogo()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Perfil Administrador</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="perfil-container">
+
+    <img
+      src="assets/img/perfil.jpg"
+      class="foto-admin"
+      alt="Administrador">
+
+    <h2>Carlos Rodríguez</h2>
+
+    <p class="cargo">
+      Administrador
+    </p>
+
+    <p class="empresa">
+      Centro de Adopción Huellitas
+    </p>
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <h3>11</h3>
+        <span>Mascotas</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>45</h3>
+        <span>Adoptadas</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>18</h3>
+        <span>Solicitudes</span>
+      </div>
+
+    </div>
+
+    <div class="info-card">
+
+      <div class="info-item">
+        <strong>Correo</strong>
+        <span>admin@huellitas.com</span>
+      </div>
+
+      <div class="info-item">
+        <strong>Teléfono</strong>
+        <span>3001234567</span>
+      </div>
+
+      <div class="info-item">
+        <strong>Dirección</strong>
+        <span>Calle 10 #20-30</span>
+      </div>
+
+    </div>
+
+    <ion-button
+      class="admin-btn"
+      expand="block"
+      (click)="administrarMascotas()"
+      >
+
+      Administrar Mascotas
+
+    </ion-button>
+
+    <ion-button
+      class="logout-btn"
+      fill="outline"
+      expand="block"
+      (click)="cerrarSesion()">
+
+      Cerrar Sesión
+
+    </ion-button>
+
+  </div>
+
+</ion-content>

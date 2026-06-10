@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volverCatalogo()">
+        <ion-icon id="icon" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Agregar Mascota</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="verMascotas()"> Ver Mascotas </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <div class="logo-paw">
+      <ion-icon name="paw"></ion-icon>
+    </div>
+
+    <h2>Agregar Mascota</h2>
+
+    <div class="form-card">
+      <div class="campo">
+        <label>Nombre</label>
+        <ion-input
+          fill="outline"
+          [(ngModel)]="mascota.nombre"
+          placeholder="Nombre de la mascota"
+        >
+        </ion-input>
+      </div>
+
+      <div class="campo">
+        <label>Tipo</label>
+        <ion-select
+          interface="popover"
+          [(ngModel)]="mascota.tipo"
+          placeholder="Seleccione"
+        >
+          <ion-select-option value="perro"> Perro </ion-select-option>
+
+          <ion-select-option value="gato"> Gato </ion-select-option>
+        </ion-select>
+      </div>
+      <div class="campo">
+        <label>Raza</label>
+
+        <ion-input
+          [(ngModel)]="mascota.raza"
+          placeholder="Ej: Golden Retriever"
+        >
+        </ion-input>
+      </div>
+
+      <div class="campo">
+        <label>Edad</label>
+
+        <ion-input type="number" [(ngModel)]="mascota.edad" placeholder="Edad">
+        </ion-input>
+      </div>
+
+      <div class="campo">
+        <label>Estado</label>
+
+        <ion-select [(ngModel)]="mascota.estado">
+          <ion-select-option value="Disponible"> Disponible </ion-select-option>
+
+          <ion-select-option value="Adoptada"> Adoptada </ion-select-option>
+
+          <ion-select-option value="Reservada"> Reservada </ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="campo">
+        <label>Descripción</label>
+
+        <ion-textarea
+          rows="4"
+          [(ngModel)]="mascota.descripcion"
+          placeholder="Describe la mascota"
+        >
+        </ion-textarea>
+      </div>
+
+      <div class="campo">
+        <label>Fotografía de la mascota</label>
+
+        <input
+          type="file"
+          accept="image/*"
+          class="file-input"
+          (change)="seleccionarImagen($event)"
+        />
+      </div>
+      <div class="preview-container" *ngIf="imagenPreview">
+        <img [src]="imagenPreview" alt="Vista previa" class="preview-image" />
+      </div>
+
+      <ion-button expand="block" class="guardar-btn" (click)="guardarMascota()">
+        Guardar Mascota
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

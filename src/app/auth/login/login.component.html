@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <div class="login-container">
+    <div class="login-wrapper">
+      <div class="brand-section ion-text-center">
+        <div class="logo-wrapper">
+          <ion-icon name="paw" class="brand-icon"></ion-icon>
+        </div>
+        <h1 class="brand-title">Huellitas</h1>
+        <p class="brand-subtitle">Conectando amigos de cuatro patas</p>
+      </div>
+
+      <div class="form-section">
+        <ion-card class="login-card">
+          <ion-card-content>
+            <div class="input-group">
+              <ion-item lines="none" class="custom-input">
+                <ion-icon name="mail-outline" slot="start"></ion-icon>
+                <ion-input
+                  type="email"
+                  placeholder="Correo electrónico"
+                ></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="input-group ion-margin-top">
+              <ion-item lines="none" class="custom-input">
+                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                <ion-input type="password" placeholder="Contraseña"></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="forgot-password ion-text-end ion-margin-top">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <ion-button
+              expand="block"
+              class="login-btn ion-margin-top"
+              (click)="iniciarSesion()"
+            >
+              Ingresar
+              <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            </ion-button>
+             <ion-button
+              expand="block"
+              class="login-btn ion-margin-top"
+              (click)="iniciarSesion2()"
+            >
+              Ingresar
+              <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+            </ion-button>
+
+            <div class="register-link ion-text-center ion-margin-top">
+              <p>
+                ¿No tienes una cuenta?
+                <a [routerLink]="['/register']">Regístrate</a>
+              </p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,212 @@
+/* ==========================================
+   CONFIGURACIÓN BASE Y DEGRADADO DE FONDO
+========================================== */
+.login-content {
+  --background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 1. CENTRADO ABSOLUTO EN CUALQUIER PANTALLA */
+.login-content .login-container {
+  display: flex;
+  align-items: center;      /* Centra verticalmente */
+  justify-content: center;   /* Centra horizontalmente */
+  min-height: 100%;          /* Ocupa todo el alto disponible */
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* 2. EL CONTENEDOR MÁGICO (Evita la deformación en PC) */
+.login-content .login-wrapper {
+  width: 100%;
+  max-width: 420px;          /* Ancho máximo en pantallas grandes */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   SECCIÓN DE LOGO / MARCA
+========================================== */
+.login-content .brand-section {
+  margin-bottom: 32px;
+  animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.login-content .brand-section .logo-wrapper {
+  background: linear-gradient(135deg, #ff9f43 0%, #ff7f11 100%);
+  color: white;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 16px;
+  border-radius: 28px;     /* Bordes redondeados modernos estilo app móvil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(255, 127, 17, 0.25);
+}
+
+.login-content .brand-section .logo-wrapper .brand-icon {
+  font-size: 44px;
+}
+
+.login-content .brand-section .brand-title {
+  font-weight: 800;
+  font-size: 34px;
+  color: #1e272e;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.login-content .brand-section .brand-subtitle {
+  color: #57606f;
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+
+/* ==========================================
+   TARJETA PREMIUM (GLASSMORPHISM)
+========================================== */
+.login-content .login-card {
+  background: rgba(255, 255, 255, 0.9); /* Ligera transparencia */
+  backdrop-filter: blur(10px);          /* Efecto difuminado trasero */
+  -webkit-backdrop-filter: blur(10px);  /* Soporte para navegadores Safari */
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  margin: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.login-content .login-card ion-card-content {
+  padding: 32px 24px;
+}
+
+/* ==========================================
+   CAMPOS DE ENTRADA (INPUTS)
+========================================== */
+.login-content .custom-input {
+  --background: #f1f2f6;
+  --border-radius: 16px;
+  --padding-start: 16px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.login-content .custom-input ion-icon {
+  color: #95afc0;
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.login-content .custom-input ion-input {
+  --placeholder-color: #57606f;
+  font-size: 15px;
+  font-weight: 500;
+  height: 48px;
+}
+
+/* Enlaces externos */
+.login-content .forgot-password a {
+  color: #ff7f11;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.login-content .forgot-password a:hover {
+  color: #d86604;
+}
+
+/* ==========================================
+   BOTÓN PRINCIPAL Y ENLACE DE REGISTRO
+========================================== */
+.login-content .login-btn {
+  --background: linear-gradient(135deg, #ff9f43 0%, #ff7f11 100%);
+  --background-activated: #d86604;
+  --border-radius: 16px;
+  --box-shadow: 0 8px 20px rgba(255, 127, 17, 0.3);
+  margin-top: 28px;
+  font-weight: 700;
+  height: 52px;
+  font-size: 16px;
+}
+
+.login-content .register-link p {
+  color: #57606f;
+  font-size: 14px;
+}
+
+.login-content .register-link a {
+  color: #ff7f11;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-content .register-link a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   3. CÍRCULOS DECORATIVOS DE FONDO
+========================================== */
+.login-content .background-orbs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none; /* Evita interferencia con los eventos de clic */
+}
+
+.login-content .background-orbs .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.login-content .background-orbs .orb-1 {
+  width: 250px;
+  height: 250px;
+  background: #ff9f43;
+  top: -50px;
+  right: -50px;
+}
+
+.login-content .background-orbs .orb-2 {
+  width: 300px;
+  height: 300px;
+  background: #48dbfb; /* Azul pastel complementario */
+  bottom: -80px;
+  left: -80px;
+}
+
+/* ==========================================
+   ANIMACIONES FLUIDAS DE ENTRADA
+========================================== */
+@keyframes fadeInDown {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95) translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95) translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}

@@ -1,0 +1,102 @@
+.form-container {
+    padding: 20px;
+    background: #fffaf6;
+    min-height: 100vh;
+}
+
+.logo-paw {
+    width: 80px;
+    height: 80px;
+
+    margin: 20px auto;
+
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff9f43 0%,
+        #ff7f11 100%
+    );
+
+    box-shadow:
+      0 10px 20px rgba(255,127,17,.25);
+}
+
+
+
+.logo-paw ion-icon {
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    
+    margin-bottom: 20px;
+}
+
+.form-card {
+    max-width: 700px;
+    margin: auto;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow:
+      0 10px 25px rgba(255,127,17,.12);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ff7f11;
+
+    font-weight: 600;
+}
+
+.guardar-btn {
+    margin-top: 20px;
+
+    --background: linear-gradient(
+      135deg,
+      #ff9f43 0%,
+      #ff7f11 100%
+    );
+
+    --border-radius: 15px;
+
+    height: 50px;
+}
+
+ion-title {
+    
+    font-weight: 700;
+}
+.preview-image {
+  width: 220px;
+  height: 220px;
+
+  object-fit: contain;
+
+  border-radius: 20px;
+
+  background: #fffaf6;
+
+  padding: 10px;
+
+  box-shadow: 0 8px 20px rgba(255, 127, 17, 0.15);
+}

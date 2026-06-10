@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Catálogo Huellitas</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button
+        fill="clear"
+        class="perfil-btn"
+        (click)="irPerfil()">
+
+        <ion-icon name="person"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="catalog-container">
+    <div class="title-section">
+      <h2>Mascotas en adopción</h2>
+      <div class="filters">
+        <ion-button
+          [class.activo]="filtroActual === 'perro'"
+          (click)="filtrarPor('perro')"
+        >
+          Perros
+        </ion-button>
+
+        <ion-button
+          [class.activo]="filtroActual === 'gato'"
+          (click)="filtrarPor('gato')"
+        >
+          Gatos
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="pets-grid">
+      <div
+        class="pet-card"
+        *ngFor="let mascota of mascotasFiltradas"
+        (click)="verDetalle(mascota.id)"
+      >
+        <div class="pet-image">
+          <img [src]="mascota.imagen" alt="" />
+        </div>
+
+        <h3>{{ mascota.nombre }}</h3>
+
+        <ion-icon name="paw" class="paw-icon"> </ion-icon>
+      </div>
+      <!-- Mensaje cuando no hay resultados -->
+      <p *ngIf="mascotasFiltradas.length === 0" class="no-resultados">
+        No hay mascotas disponibles en esta categoría.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <ion-icon name="paw"></ion-icon>
+
+      <span> Al dar clic en cualquier mascota se muestran los detalles. </span>
+    </div>
+  </div>
+</ion-content>

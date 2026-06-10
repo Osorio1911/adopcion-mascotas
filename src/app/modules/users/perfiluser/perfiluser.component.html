@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón volver -->
+    <ion-buttons slot="start">
+      <ion-button (click)="volverCatalogo()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Perfil</ion-title>
+
+    <!-- Botón cerrar sesión -->
+    <ion-buttons slot="end">
+      <ion-button
+        class="logout-btn"
+        (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="perfil-container">
+
+    <div class="foto-container">
+      <img
+        src="/assets/img/perfil.jpg"
+        alt="Perfil"
+        class="foto-perfil">
+    </div>
+
+    <h2>{{ usuario.nombre }}</h2>
+
+    <p class="correo">
+      {{ usuario.correo }}
+    </p>
+
+    <div class="info-card">
+
+      <div class="info-item">
+        <span class="label">Documento</span>
+        <span>{{ usuario.documento }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Teléfono</span>
+        <span>{{ usuario.telefono }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Ciudad</span>
+        <span>{{ usuario.ciudad }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Dirección</span>
+        <span>{{ usuario.direccion }}</span>
+      </div>
+
+    </div>
+
+    <ion-button expand="block" class="editar-btn">
+      Editar Perfil
+    </ion-button>
+
+  </div>
+
+</ion-content>

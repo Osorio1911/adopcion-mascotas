@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="volverCatalogo()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Detalle Mascota</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="volverCatalogo()">
+        Catálogo
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngIf="mascota">
+
+  <div class="detalle-container">
+
+    <div class="imagen-card">
+      <img
+        [src]="mascota.imagen"
+        [alt]="mascota.nombre"
+        class="foto-mascota">
+    </div>
+
+    <h1>{{ mascota.nombre }}</h1>
+
+    <div class="estado">
+      {{ mascota.estado }}
+    </div>
+
+    <div class="info-card">
+
+      <div class="info-item">
+        <span class="label">Tipo</span>
+        <span>{{ mascota.tipo }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Raza</span>
+        <span>{{ mascota.raza }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Edad</span>
+        <span>{{ mascota.edad }} años</span>
+      </div>
+
+    </div>
+
+    <div class="descripcion-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        {{ mascota.descripcion }}
+      </p>
+
+    </div>
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/573001234567"
+      target="_blank">
+
+      Contactar por WhatsApp
+
+    </a>
+
+  </div>
+
+</ion-content>

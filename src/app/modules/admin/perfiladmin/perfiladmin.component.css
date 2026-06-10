@@ -1,0 +1,115 @@
+.perfil-container {
+    padding: 20px;
+    text-align: center;
+    background: #fffaf6;
+    min-height: 100%;
+}
+
+.foto-admin {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid #ff7f11;
+
+    margin-top: 20px;
+
+    box-shadow:
+      0 8px 20px rgba(255,127,17,.25);
+}
+
+h2 {
+    margin-top: 15px;
+    color: #ff7f11;
+}
+
+.cargo {
+    font-weight: 700;
+    color: #444;
+}
+
+.empresa {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    flex: 1;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    box-shadow:
+      0 5px 15px rgba(255,127,17,.1);
+}
+
+.stat-card h3 {
+    color: #ff7f11;
+    margin: 0;
+}
+
+.info-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+      0 5px 15px rgba(255,127,17,.1);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    color: #ff7f11;
+}
+
+.admin-btn {
+    --background: linear-gradient(
+      135deg,
+      #ff9f43 0%,
+      #ff7f11 100%
+    );
+    width: 50%;
+    margin: 25px auto 0 auto;
+    --border-radius: 15px;
+
+    margin-bottom: 12px;
+}
+
+.logout-btn {
+    --color: #ff7f11;
+    --border-color: #ff7f11;
+
+    --border-radius: 15px;
+    width: 50%;
+    margin: 25px auto 0 auto;
+}
