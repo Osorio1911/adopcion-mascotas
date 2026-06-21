@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Editar Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding bg-warm-container">
+  <div class="form-container">
+    
+    <div class="form-header">
+      <h2><span class="paw-icon">🐾</span> Editar Perfil</h2>
+      <p>Modifica la información de la mascota a continuación.</p>
+    </div>
+
+    <form [formGroup]="mascotaForm" (ngSubmit)="guardarCambios()">
+      
+      <ion-item lines="none" class="custom-item">
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre" placeholder="Ej. Max"></ion-input>
+      </ion-item>
+
+      <div class="grid-row">
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="stacked">Tipo de Mascota</ion-label>
+          <ion-select formControlName="tipo" placeholder="Selecciona uno" interface="popover">
+            <ion-select-option value="perro">Perro</ion-select-option>
+            <ion-select-option value="gato">Gato</ion-select-option>
+            <ion-select-option value="ave">Ave</ion-select-option>
+            <ion-select-option value="otro">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="stacked">Raza</ion-label>
+          <ion-input type="text" formControlName="raza" placeholder="Ej. Golden Retriever"></ion-input>
+        </ion-item>
+      </div>
+
+      <div class="grid-row">
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="stacked">Edad (Años)</ion-label>
+          <ion-input type="number" formControlName="edad" min="0" placeholder="Ej. 3"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-item">
+          <ion-label position="stacked">Estado</ion-label>
+          <ion-select formControlName="estado" placeholder="Selecciona estado" interface="popover">
+            <ion-select-option value="disponible">Disponible</ion-select-option>
+            <ion-select-option value="adoptado">Adoptado</ion-select-option>
+            <ion-select-option value="en_tratamiento">En tratamiento</ion-select-option>
+            <ion-select-option value="reservado">Reservado</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <ion-item lines="none" class="custom-item">
+        <ion-label position="stacked">Foto de la Mascota (Desde PC)</ion-label>
+        <input type="file" 
+               accept="image/*" 
+               (change)="onFileSelected($event)" 
+               class="native-file-input">
+        
+        <div *ngIf="imagenPreview" class="preview-container">
+          <img [src]="imagenPreview" alt="Vista previa de la mascota">
+        </div>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-item">
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-textarea formControlName="descripcion" rows="3" placeholder="Cuéntanos un poco sobre su personalidad..."></ion-textarea>
+      </ion-item>
+
+      <div class="action-buttons">
+        <ion-button type="button" fill="clear" color="medium" (click)="cancelar()">
+          Cancelar
+        </ion-button>
+        <ion-button type="submit" class="btn-guardar" >
+          Guardar Cambios
+        </ion-button>
+      </div>
+
+    </form>
+  </div>
+</ion-content>

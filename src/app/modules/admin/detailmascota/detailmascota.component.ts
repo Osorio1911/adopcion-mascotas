@@ -10,17 +10,19 @@ import {
   IonTitle,
   IonButton,
   IonButtons,
-  IonIcon
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { arrowBackOutline } from 'ionicons/icons';
+import { arrowBackOutline, createOutline, trashOutline } from 'ionicons/icons';
+import { ModalController } from '@ionic/angular';
+import { MascotaedtitComponent } from '../modals/edit/mascotaedtit.component';
 
 @Component({
   selector: 'app-detailmascota',
   templateUrl: './detailmascota.component.html',
   styleUrls: ['./detailmascota.component.css'],
-   standalone: true,
+  standalone: true,
   imports: [
     CommonModule,
     IonContent,
@@ -29,31 +31,51 @@ import { arrowBackOutline } from 'ionicons/icons';
     IonTitle,
     IonButton,
     IonButtons,
-    IonIcon
-  ]
- 
+    IonIcon,
+  ],
+  providers: [ModalController]
 })
 export class DetailmascotaComponent implements OnInit {
-
   mascota?: Mascotas;
 
-  constructor(private route: ActivatedRoute,private router: Router) {
-    addIcons({
-    arrowBackOutline
-  });
-  }
-  
-  ngOnInit() {
-    const id = Number(
-      this.route.snapshot.paramMap.get('id')
-    );
-    this.mascota = MASCOTAS_DATA.find(
-      m => m.id === id
-    );
-    
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private modalController: ModalController
+  ) {
+    addIcons({arrowBackOutline,createOutline,trashOutline,});
   }
 
-  volverCatalogo() {
-  this.router.navigate(['/mascotasExitentes']);
+  ngOnInit() {
+    this.mascota = MASCOTAS_DATA[0];
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.mascota = MASCOTAS_DATA.find((m) => m.id === id);
+  }
+  
+  abrirModalEditar() {
+  this.modalController.create({
+    component: MascotaedtitComponent,
+    componentProps: {
+      mascotaAEditar: this.mascota 
+    }
+  }).then(modal => {
+    
+    // Una vez creado el modal, lo presentamos
+    modal.present();
+
+    // Programamos qué pasa cuando el modal se cierre
+    modal.onDidDismiss().then(resultado => {
+      if (resultado.data) {
+        // Asignamos la data modificada que viene desde el modal
+        this.mascota = resultado.data; 
+        console.log('Detalle actualizado sin async/await:', this.mascota);
+      }
+    });
+
+  });
 }
+
+  volverCatalogo() {
+    this.router.navigate(['/mascotasExitentes']);
+  }
 }

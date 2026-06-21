@@ -114,27 +114,40 @@ h1 {
     line-height: 1.6;
 }
 
-.whatsapp-btn {
-    display: block;
+/* Estilo para los botones nativos de Ionic */
+.btn-personalizado {
+    /* Propiedades específicas de Ionic (Shadow DOM) */
+    --background: #fff0e1;
+    --color: #ff7f11;
+    --border-radius: 8px;
+    --border-color: #ff7f11;
+    --border-style: solid;
+    --border-width: 1px;
+    
+    /* Propiedades estándar de tipografía y espaciado */
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px;
+    text-transform: uppercase; /* Opcional: para mantener un estándar de diseño */
+    transition: all 0.3s ease;
+}
 
+/* Efecto Hover (Cuando pasas el mouse o cursor por encima) */
+.btn-personalizado:hover {
+    --background: #ff7f11;
+    --color: #ffffff;
+}
+
+/* Estilo para los iconos internos */
+.btn-personalizado ion-icon {
+    font-size: 18px;
+}
+
+/* Contenedor principal para alinear los botones uno al lado del otro */
+.botones-gestion {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
     width: 100%;
-
-    padding: 15px;
-
-    border-radius: 15px;
-
-    text-decoration: none;
-
-    color: white;
-
-    font-weight: 700;
-
-    background: linear-gradient(
-      135deg,
-      #ff9f43 0%,
-      #ff7f11 100%
-    );
-
-    box-shadow:
-      0 8px 20px rgba(255,127,17,.25);
 }

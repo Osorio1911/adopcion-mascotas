@@ -1,0 +1,155 @@
+/* Fondo cálido sutil para el contenedor principal */
+.bg-warm-container {
+  --background: #fdfaf6; 
+}
+
+.form-container {
+  max-width: 550px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f5ebd9;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222222;
+  margin: 0;
+}
+
+.form-header h2 .paw-icon {
+  color: #ff7f11; /* Color cálido principal */
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #777777;
+  margin: 6px 0 0 0;
+}
+
+/* Estilos personalizados para los inputs de Ionic nativos */
+.custom-item {
+  --background: #ffffff;
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+  margin-bottom: 16px;
+}
+
+.custom-item ion-label {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #444444 !important;
+  margin-bottom: 6px !important;
+}
+
+.custom-item ion-input, 
+.custom-item ion-select, 
+.custom-item ion-textarea {
+  --padding-start: 14px;
+  --padding-end: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 15px;
+  min-height: 44px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto Focus simulado con las variables de Ionic */
+.custom-item ion-input.ion-focused,
+.custom-item ion-select.ion-focused,
+.custom-item ion-textarea.ion-focused {
+  border-color: #ff7f11;
+  box-shadow: 0 0 0 3px rgba(255, 127, 17, 0.15);
+}
+
+.custom-item ion-textarea {
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+/* Estilos específicos para el input de tipo File (PC) */
+.native-file-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: #ffffff;
+  margin-top: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.native-file-input:focus {
+  border-color: #ff7f11;
+  outline: none;
+}
+
+/* Contenedor e imagen de la vista previa */
+.preview-container {
+  margin-top: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.preview-container img {
+  max-width: 140px;
+  max-height: 140px;
+  border-radius: 12px;
+  border: 2px solid #ff7f11;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(255, 127, 17, 0.15);
+}
+
+/* Soporte Grid responsivo para filas dobles */
+.grid-row {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.grid-row .custom-item {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Media query para pantallas medianas/grandes (pasa a 2 columnas) */
+@media (min-width: 480px) {
+  .grid-row {
+    flex-direction: row;
+    margin-bottom: 16px;
+  }
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.action-buttons ion-button {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none; /* Evita mayúsculas automáticas estilo Android */
+  height: 44px;
+}
+
+.action-buttons .btn-guardar {
+  --background: #ff7f11; /* Tu color cálido solicitado */
+  --background-hover: #e56f0e;
+  --background-activated: #cc620c;
+  --border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 127, 17, 0.2);
+}
