@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-
     <!-- Botón izquierda -->
     <ion-buttons slot="start">
       <ion-button (click)="volverCatalogo()">
@@ -12,70 +11,55 @@
     <ion-title>Detalle Mascota</ion-title>
 
     <!-- Botón derecha -->
-    <ion-buttons  slot="end">
+    <ion-buttons slot="end">
       <ion-button class="btncatal" (click)="irCatalogo()">
         Catálogo
       </ion-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <div class="detalle-container">
-
-    <img
-      class="mascota-img"
-      [src]="mascota.imagen"
-      [alt]="mascota.nombre">
-
-    <div class="info-card">
-
-      <h1>{{ mascota.nombre }}</h1>
-
-      <span class="badge">
-        {{ mascota.tipo }}
-      </span>
-
-      <div class="datos">
-
-        <div class="dato">
-          <strong>Edad:</strong>
-          2 años
-        </div>
-
-        <div class="dato">
-          <strong>Raza:</strong>
-          Labrador
-        </div>
-
-        <div class="dato">
-          <strong>Estado:</strong>
-          Disponible
-        </div>
-
+@if (mascota; as m) {
+  <ion-content>
+    <div class="detalle-container">
+      <div class="imagen-card">
+        <img [src]="m.imagen" [alt]="m.nombre" class="foto-mascota" />
       </div>
 
-      <h3>Descripción</h3>
+      <h1>{{ m.nombre }}</h1>
 
-      <p>
-        Mascota amigable, juguetona y lista para encontrar
-        un hogar lleno de amor.
-      </p>
+      <div class="estado">
+        {{ m.estado }}
+      </div>
 
+      <div class="info-card">
+        <div class="info-item">
+          <span class="label">Tipo</span>
+          <span>{{ m.tipo }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Raza</span>
+          <span>{{ m.raza }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="label">Edad</span>
+          <span>{{ m.edad }} años</span>
+        </div>
+      </div>
+
+      <div class="descripcion-card">
+        <h3>Descripción</h3>
+
+        <p>
+          {{ m.descripcion }}
+        </p>
+      </div>
+             <h3>Contactar por whatsapp</h3>
+      <a class="whatsapp-fab" href="https://wa.me/573001234567" target="_blank">
+        <ion-icon name="logo-whatsapp"> </ion-icon>
+      </a>
     </div>
-
-  </div>
-
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button
-      class="whatsapp-btn"
-      (click)="contactarWhatsapp()">
-
-      <ion-icon name="logo-whatsapp"></ion-icon>
-
-    </ion-fab-button>
-  </ion-fab>
-
-</ion-content>
+  </ion-content>
+}

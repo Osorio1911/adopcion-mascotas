@@ -50,6 +50,7 @@ export class DetailmascotaComponent implements OnInit {
     this.mascota = MASCOTAS_DATA.find(
       m => m.id === id
     );
+    
   }
 
   volverCatalogo() {

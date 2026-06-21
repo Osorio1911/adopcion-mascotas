@@ -9,7 +9,7 @@ export const MASCOTAS_DATA: Mascotas[] = [
     edad: 2,
     descripcion: 'Muy amigable y juguetón.',
     imagen: 'assets/img/perro1.jpg',
-    estado: 'Disponible'
+    estado: 'adoptado'
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export const MASCOTAS_DATA: Mascotas[] = [
     edad: 4,
     descripcion: 'Protector, obediente y muy inteligente.',
     imagen: 'assets/img/perro3.jpg',
-    estado: 'Disponible'
+    estado: 'proceso'
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ export const MASCOTAS_DATA: Mascotas[] = [
     edad: 3,
     descripcion: 'Energética, le encantan las caminatas largas.',
     imagen: 'assets/img/perro6.jpg',
-    estado: 'Disponible'
+    estado: 'proceso'
   },
   {
     id: 7,
@@ -89,7 +89,7 @@ export const MASCOTAS_DATA: Mascotas[] = [
     edad: 1,
     descripcion: 'Muy juguetona y amigable con las personas.',
     imagen: 'assets/img/gato3.jpg',
-    estado: 'Disponible'
+    estado: 'en proceso'
   },
   {
     id: 10,
@@ -109,6 +109,6 @@ export const MASCOTAS_DATA: Mascotas[] = [
     edad: 2,
     descripcion: 'Muy independiente pero cariñosa con su familia.',
     imagen: 'assets/img/gato5.jpg',
-    estado: 'Disponible'
+    estado: 'adoptado'
   }
 ];

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   IonContent,
   IonHeader,
@@ -12,49 +12,54 @@ import {
   IonButton,
 } from '@ionic/angular/standalone';
 
-
 import { addIcons } from 'ionicons';
 import { arrowBackOutline, logoWhatsapp } from 'ionicons/icons';
+import { Mascotas } from '../../../services/interfaces/mascotas';
+import { MASCOTAS_DATA } from '../../../services/data/mascotasdata';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-userdetailmasc',
   templateUrl: './userdetailmasc.component.html',
   styleUrls: ['./userdetailmasc.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
     IonButtons,
     IonButton,
     IonContent,
     IonHeader,
     IonToolbar,
     IonTitle,
-    IonFab,
-    IonFabButton,
     IonIcon,
+    
   ],
 })
 export class UserdetailmascComponent implements OnInit {
-  mascota = {
-    id: 1,
-    nombre: 'Doby',
-    imagen: 'assets/img/perro4.jpg',
-    tipo: 'Perro',
-  };
-  constructor(private router: Router) {
+  mascota?: Mascotas;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {
     addIcons({
       logoWhatsapp,
       arrowBackOutline,
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.mascota = MASCOTAS_DATA.find((m) => m.id === id);
+    console.log('aqui detalle', id  )
+  }
 
   volverCatalogo() {
-  this.router.navigate(['/catalogoM']);
-}
+    this.router.navigate(['/catalogoM']);
+  }
 
-irCatalogo() {
-  this.router.navigate(['/catalogoM']);
-}
+  irCatalogo() {
+    this.router.navigate(['/catalogoM']);
+  }
 
   contactarWhatsapp() {
     window.open('https://wa.me/573001234567', '_blank');

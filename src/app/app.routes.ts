@@ -59,7 +59,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'detalleM',
+    path: 'detalleM/:id',
     loadComponent: () =>
       import('./modules/users/userdetailmasc/userdetailmasc.component').then(
         (m) => m.UserdetailmascComponent,
