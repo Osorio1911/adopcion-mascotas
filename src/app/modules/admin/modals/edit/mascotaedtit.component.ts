@@ -11,6 +11,7 @@ import {
   ToastController,
   ModalController, // <-- Asegúrate de que se use aquí abajo
 } from '@ionic/angular';
+import { MASCOTAS_DATA } from '../../../../services/data/mascotasdata'; // Ajusta la ruta si es necesario
 
 @Component({
   selector: 'app-mascotaedtit',
@@ -80,29 +81,37 @@ export class MascotaedtitComponent implements OnInit {
     }
   }
 
-  async guardarCambios() {
-    if (this.mascotaForm.valid) {
-      const mascotaModificada = {
-        ...this.mascotaForm.value,
-        imagen: this.imagenArchivo || this.mascotaAEditar.imagen, 
-      };
+ async guardarCambios() {
+  if (this.mascotaForm.valid) {
+    
+    const mascotaModificada = {
+      ...this.mascotaForm.value,
+      // Conservamos el ID original de la mascota que estamos editando
+      id: this.mascotaAEditar.id, 
+      imagen: this.imagenPreview ? (this.imagenPreview as string) : this.mascotaAEditar.imagen, 
+    };
 
-      console.log('💾 GUARDANDO CAMBIOS...', mascotaModificada);
-
-      // Opcional: Aquí puedes buscar en tu MASCOTAS_DATA para actualizar el registro real si lo deseas
-
-      const toast = await this.toastController.create({
-        message: `¡Se guardaron los cambios de ${mascotaModificada.nombre}!`,
-        duration: 3000,
-        color: 'success',
-        position: 'bottom',
-      });
-      await toast.present();
-
-      // Al guardar, cerramos mandando la data modificada de regreso
-      this.modalController.dismiss(mascotaModificada);
+    // 🔍 BUSCAMOS LA MASCOTA EN EL ARRAY GLOBAL Y LA ACTUALIZAMOS
+    const index = MASCOTAS_DATA.findIndex(m => m.id === this.mascotaAEditar.id);
+    if (index !== -1) {
+      MASCOTAS_DATA[index] = mascotaModificada;
+      console.log('✅ MASCOTAS_DATA actualizada en memoria:', MASCOTAS_DATA);
+    } else {
+      console.warn('No se encontró la mascota con ID:', this.mascotaAEditar.id);
     }
+
+    const toast = await this.toastController.create({
+      message: `¡Se guardaron los cambios de ${mascotaModificada.nombre}!`,
+      duration: 3000,
+      color: 'success',
+      position: 'bottom',
+    });
+    await toast.present();
+
+    // Cerramos mandando la data por si el catálogo la necesita
+    this.modalController.dismiss(mascotaModificada);
   }
+}
 
   cancelar() {
     console.log('Edición cancelada');

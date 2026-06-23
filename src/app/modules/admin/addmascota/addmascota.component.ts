@@ -77,43 +77,49 @@ export class AddmascotaComponent implements OnInit {
   volverCatalogo() {
     
   }
+  
 guardarMascota() {
-  this.router.navigate(['/mascotasExitentes']);
+  // 1. Validar que al menos se haya escrito un nombre para evitar meter objetos vacíos
+  if (!this.mascota.nombre.trim()) {
+    console.error('El nombre de la mascota es obligatorio.');
+    return;
+  }
+
+  // 2. Construir el nuevo objeto con su ID único e imagen en Base64
+  const nuevaMascota: Mascotas = {
+    ...this.mascota,
+    id: Date.now(),
+    // Si hay vista previa (Base64), la usamos; si no, dejamos una cadena vacía o una de respaldo
+    imagen: this.imagenPreview ? (this.imagenPreview as string) : ''
+  };
+
+  // 3. Insertar la mascota en tu archivo de datos global
+  MASCOTAS_DATA.push(nuevaMascota);
+  console.log('Mascota guardada con éxito:', nuevaMascota);
+
+  // 4. Mostrar la notificación de éxito
   this.mostrarMensaje();
 
-    const nuevaMascota: Mascotas = {
-      ...this.mascota,
-      id: Date.now(),
-    };
-
-    MASCOTAS_DATA.push(nuevaMascota);
-
-    console.log('Mascota agregada');
-
-    console.log(nuevaMascota);
-
-    console.log('Listado completo');
-
-    console.table(MASCOTAS_DATA);
-  }
+  // 5. POR ÚLTIMO, navegar hacia el catálogo ya con los datos actualizados
+  this.router.navigate(['/mascotasExitentes']);
+}
 
 
 
   seleccionarImagen(event: any) {
-    const archivo = event.target.files[0];
+  const archivo = event.target.files[0];
 
-    if (archivo) {
-      this.mascota.imagen = archivo.name;
+  if (archivo) {
+    const reader = new FileReader();
 
-      const reader = new FileReader();
+    reader.onload = () => {
+      // Guardamos el Base64 en la propiedad de la vista previa
+      this.imagenPreview = reader.result;
+    };
 
-      reader.onload = () => {
-        this.imagenPreview = reader.result;
-      };
-
-      reader.readAsDataURL(archivo);
-    }
+    reader.readAsDataURL(archivo);
   }
+}
 
   async mostrarMensaje() {
   const toast = await this.toastController.create({

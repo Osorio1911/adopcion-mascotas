@@ -67,7 +67,7 @@ export class RegisterComponent  implements OnInit {
 
   irAlLogin(event: Event) {
     event.preventDefault();
-    //this.router.navigate(['/login']); // Cambia por la ruta exacta de tu vista login
+    this.router.navigate(['/login']); // Cambia por la ruta exacta de tu vista login
   }
 
 }
